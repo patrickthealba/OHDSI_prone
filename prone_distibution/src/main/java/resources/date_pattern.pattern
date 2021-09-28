@@ -1,0 +1,3 @@
+##Pattern annotator to identify dates, and date ranges.  If a range exists, Anchor is the first value, and target is the second
+#<!anchor><gov.va.vinci.vent.types.Temporality/><!anchor/>
+<!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>\s*<gov.va.vinci.vent.types.Vent_Date_Middle/>\s*<!target><gov.va.vinci.vent.types.Vent_Date/><!target/>

@@ -1,0 +1,307 @@
+************************************************************************
+************************************************************************Summary of Prone Output Types by Pipeline order
+************************************************************************
+
+
+This text file contains non-PHI examples of text identified and extracted by the Prone NLP System.
+
+The examples are presented in the order of processing that is completed by the pipeline a Prone_Pipeline
+
+
+************************************************************************
+************************************************************************1. Annotate Anchore terms
+************************************Type: Prone_Term
+************************************
+
+
+****
+prone
+****
+proned
+****
+prone position
+****
+proning
+****
+
+
+************************************************************************
+************************************************************************1.1 Annotate Common Exclusions and Delete Anchor
+************************************Type: Prone_Exclude
+************************************
+
+****
+moisture-prone site.
+****
+infection-prone
+****
+infection prone
+****
+
+************************************************************************
+************************************************************************2. Annotate sentence
+************************************Type: AnchoredSentence
+************************************
+
+****
+ AMR Memo - Pt's pulse ox dipping to mis 80's.
+Encourage pt. to prone at this time.
+        	21:30 AMR Pt asleep
+        	21:30 AMR Lying in bed
+        	22:25 AMR Memo - RN called into room by patient,
+starting to have chills.  Pt. slightly feb
+****
+Form including the above information confirmed.
+ Patient Position:  prone
+
+ Yes-Site marked or wristband applied and visible after prep and draping.
+
+****
+RESPIRATORY THERAPIST'S COMMENT:
+Patient placed back in prone position.
+****
+
+
+************************************************************************
+************************************************************************3. Annotate Modifier and Vent Types
+************************************Type: Prone_Modifier, Prone_Middle, Vent_Term
+
+These are only annotated if there's an anchored sentence
+************************************
+************************************
+
+
+****
+The patient was placed in prone position.
+****
+UTA anterior d/t pt proned.
+****
+Pt proned at this time.
+****
+Pt proned briefly.
+****
+pt laying prone no sob or dyspnea uti,culture pending, cont
+****
+Intubated/sedated, proning.
+****
+S: - patient remains intubated and prone
+****
+
+************************************ (No anchor)
+RESPIRATORY THERAPIST'S COMMENT:
+Patient placed back on HFNC.
+
+************************************ (With anchor)
+RESPIRATORY THERAPIST'S COMMENT:
+Patient placed back on prone position.
+
+
+
+
+************************************************************************
+************************************3.1 overlapped concepts are merged
+************************************
+
+
+****
+in prone position.
+****
+placed in a prone position.
+****
+has been able to tolerate prone
+****
+has not been able to tolerate prone
+****
+tolerating prone position
+****
+not tolerating prone position
+****
+
+
+************************************************************************
+************************************************************************4. Annotate Dates and Temporality Terms
+************************************Types: Vent_Date_Midle, Vent_Date
+************************************
+
+
+****
+5/15
+****
+07/19/2020
+****
+5/21 - s/p proning intermitantly
+****
+proning this afternoon
+****
+proned yesterday
+****
+Prone positioning at least 15hrs/day.
+****
+Pt proned again on 2/4.
+****
+
+
+************************************************************************
+************************************************************************5. Identify Date Patterns, and remove overlapped dates  (Date_1/2 are set in the logic annotator)
+************************************Type: Date_Pattern
+************************************
+
+
+****
+5/15 - 5/21 - s/p proning intermitantly
+****
+proning 9/3 to 9/6
+****
+
+
+************************************************************************
+************************************************************************6. Annotate Right Sided Modifier Terms
+Some concepts work well with the pattern annotator,
+but only on the left/right side
+************************************
+************************************Type: Prone_Modifier_Right
+************************************
+
+
+****
+proning as able
+****
+**** (to\\s*\\w+) is a super specific exclusion for the prone concept
+Prone to anxiety
+****
+prone to bleeding
+****
+
+
+************************************************************************
+************************************************************************7. Delete right sided annotations
+************************************************************************that are overlapped by anchors or more complete modifiers
+************************************
+
+
+****
+proned 5/15 to 5/21
+**** ('to' as a regex would have overlapped this and boundary cases on the regex would have missed some exclusions)
+tolerate awake proning
+****
+
+************************************************************************
+************************************************************************8.Create Prone Pattern
+This is most often simply [Modifier_term] + [Anchor], but does include the target/anchor logic for date ranges
+Similar to the examples with prone terms, overlapped patterns also merge
+************************************************************************
+************************************************************************
+
+
+****
+in prone position.
+****
+placed in a prone position.
+****
+The patient was placed in prone position.
+****
+
+************************************
+************************************************************************
+************************************************************************9. Logic Annotator
+This step takes complete prone patterns and sets
+all of the features that are output. (See the pattern features)
+Primarily just takes a modifier, and sets the concept to
+the prone [Phrase_modifier].
+
+Includes some additional logic for the extracted dates, and mechanical ventilation
+terms that were annotated separately.
+************************************************************************
+************************************************************************
+
+
+****
+************************9.1 Section Annotator
+****
+**** Disabled in the current pipeline, but kept the feature which is populated if you uncomment out the sectionizer
+**** Ultimately it added nothing for this project, and was an extra processing layer that we didn't need.
+************************
+****
+
+************************9.2 Set Phrase_Modifier: Using the concept of an overlapped modifier term
+************************
+
+****
+s/p proning
+****
+
+
+************************9.3 Set Phrase_Modifier: if overlapped by mechanical vent terms (functions exactly the same as modifiers, but keeping separate for future vent updates etc. )
+****Should/probably will do the same for supplemental 02 concepts (eventually could/should merge them all into a single system)
+****************************
+
+****
+S: - patient remains intubated and prone
+****
+
+
+************************9.4 Set Phrase_Modifier: Using the concept of an overlapped right sided modifier
+
+****
+Prone to anxiety
+****
+prone to bleeding
+****
+
+
+************************9.5 Set Extrtacted Date: If a date exists (and wasn't overlapped by the date pattern)
+**** This logic is questionable/not necessary for the current tool, may update soon
+************************
+
+****
+proned on 5/21
+****
+
+
+************************9.6 Set Extrtacted Date: If a date pattern exists
+
+****
+ S/p intermittent proning 9/3 to 9/6
+****
+**** some common templates within the VA, are more hardcoded
+****
+Patient Positioning Body Positioning (9/06 8:00 AM )-- Prone
+
+
+************************9.7 Set the anchor term and term_type features
+
+****
+pt is prone
+****
+proned today
+****
+proning this afternoon
+****
+
+
+************************9.8 Set the output overlapped sentence
+
+****
+RESPIRATORY THERAPIST'S COMMENT:
+****
+Patient placed back in prone position.
+****
+Patient without decreased PO intake.
+****
+
+
+************************************************************************
+************************************************************************
+************************************************Done
+************************************************************************
+************************************************************************
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,743 @@
+"DocID","Term","Term_Type","Term_Modifier","Phrase_Modifier","Modifier_Term","Temporality_Modifier","Date_1","Date_2","Anchored_Sentence","SpanStart","SpanEnd","Snippets"
+"Sample_text_and_pipeline_logic.txt","Prone","prone",,,,,,,"***************************************Summary of Prone Output Types by Pipeline order *****************","157","162","***************************************Summary of Prone Output Types by Pipeline order
+************************************************************************
+
+
+This text file contains non-PHI examples of text identified and extracted by the Prone NL"
+"Sample_text_and_pipeline_logic.txt","Prone","prone",,,,,,,"examples of text identified and extracted by the Prone NLP System.","354","359"," examples of text identified and extracted by the Prone NLP System.
+
+The examples are presented in the order of processing that is completed by the pipeline a Prone_Pipeline
+
+
+************************************************************************
+"
+"Sample_text_and_pipeline_logic.txt","Prone","prone",,,,,,,"of processing that is completed by the pipeline a Prone_Pipeline ***********************************","465","470","of processing that is completed by the pipeline a Prone_Pipeline
+
+
+************************************************************************
+************************************************************************1. Annotate Anchore terms
+************"
+"Sample_text_and_pipeline_logic.txt","Prone","prone",,,,,,,"terms ************************************Type: Prone_Term ************************************ **** prone **** proned **** prone position **** proning **** **************************************","700","705"," terms
+************************************Type: Prone_Term
+************************************
+
+
+****
+prone
+****
+proned
+****
+prone position
+****
+proning
+****
+
+
+************************************************************************
+***"
+"Sample_text_and_pipeline_logic.txt","prone","prone",,,,,,,"terms ************************************Type: Prone_Term ************************************ **** prone **** proned **** prone position **** proning **** **************************************","760","765","
+************************************
+
+
+****
+prone
+****
+proned
+****
+prone position
+****
+proning
+****
+
+
+************************************************************************
+***************************************************************"
+"Sample_text_and_pipeline_logic.txt","proned","proned",,,,,,,"terms ************************************Type: Prone_Term ************************************ **** prone **** proned **** prone position **** proning **** **************************************","773","779","*************************
+
+
+****
+prone
+****
+proned
+****
+prone position
+****
+proning
+****
+
+
+************************************************************************
+************************************************************************1.1 A"
+"Sample_text_and_pipeline_logic.txt","prone position","prone",,,,,,,"terms ************************************Type: Prone_Term ************************************ **** prone **** proned **** prone position **** proning **** **************************************","787","801","***********
+
+
+****
+prone
+****
+proned
+****
+prone position
+****
+proning
+****
+
+
+************************************************************************
+************************************************************************1.1 Annotate Common Exclusi"
+"Sample_text_and_pipeline_logic.txt","proning","prone",,,,,,,"terms ************************************Type: Prone_Term ************************************ **** prone **** proned **** prone position **** proning **** **************************************","809","816","
+prone
+****
+proned
+****
+prone position
+****
+proning
+****
+
+
+************************************************************************
+************************************************************************1.1 Annotate Common Exclusions and Delete "
+"Sample_text_and_pipeline_logic.txt","Prone","prone",,,,,,,"Anchor ************************************Type: Prone_Exclude ************************************","1066","1071","Anchor
+************************************Type: Prone_Exclude
+************************************
+
+****
+moisture-prone site.
+****
+infection-prone
+****
+infection prone
+****
+
+********************************************************************"
+"Sample_text_and_pipeline_logic.txt","Encourage pt. to prone","prone",,"Intent:Discussed","Encourage pt. to",,,,"Encourage pt. to prone at this time.","1525","1547","
+ AMR Memo - Pt's pulse ox dipping to mis 80's.
+Encourage pt. to prone at this time.
+        	21:30 AMR Pt asleep
+        	21:30 AMR Lying in bed
+        	22:25 AMR Memo - RN called into room by patient,
+starting to have chills.  Pt. slightly feb
+****
+Form includi"
+"Sample_text_and_pipeline_logic.txt","Patient Position:  prone","prone",,"Treated:TemplatedNote","Patient Position:",,,,"Patient Position: prone Yes-Site marked or wristband applied and visi","1785","1809","Form including the above information confirmed.
+ Patient Position:  prone
+
+ Yes-Site marked or wristband applied and visible after prep and draping.
+
+****
+RESPIRATORY THERAPIST'S COMMENT:
+Patient placed back in prone position.
+****
+
+
+*****************************"
+"Sample_text_and_pipeline_logic.txt","back in prone position","prone",,"Treated:Restarted","back in",,,,"TORY THERAPIST'S COMMENT: Patient placed back in prone position.","1945","1967","
+RESPIRATORY THERAPIST'S COMMENT:
+Patient placed back in prone position.
+****
+
+
+************************************************************************
+************************************************************************3. Annotate Modifier and Vent Types
+****"
+"Sample_text_and_pipeline_logic.txt","Prone","prone",,,,,,,"Types ************************************Type: Prone_Modifier, Prone_Middle, Vent_Term These are only annotated if","2205","2210"," Types
+************************************Type: Prone_Modifier, Prone_Middle, Vent_Term
+
+These are only annotated if there's an anchored sentence
+************************************
+************************************
+
+
+****
+The patient was pl"
+"Sample_text_and_pipeline_logic.txt","Prone","prone",,,,,,,"Types ************************************Type: Prone_Modifier, Prone_Middle, Vent_Term These are only annotated if","2221","2226","****************************Type: Prone_Modifier, Prone_Middle, Vent_Term
+
+These are only annotated if there's an anchored sentence
+************************************
+************************************
+
+
+****
+The patient was placed in prone po"
+"Sample_text_and_pipeline_logic.txt","patient was placed in prone position","prone",,"Treated:Start","patient was placed in",,,,"************ **** The patient was placed in prone position.","2396","2432","**********************************
+
+
+****
+The patient was placed in prone position.
+****
+UTA anterior d/t pt proned.
+****
+Pt proned at this time.
+****
+Pt proned briefly.
+****
+pt laying prone no sob or dyspnea uti,culture pending, cont
+****
+Intubated/sedated, proning.
+***"
+"Sample_text_and_pipeline_logic.txt","pt proned","proned",,"Treated:Start","pt",,,,"**** UTA anterior d/t pt proned.","2458","2467","placed in prone position.
+****
+UTA anterior d/t pt proned.
+****
+Pt proned at this time.
+****
+Pt proned briefly.
+****
+pt laying prone no sob or dyspnea uti,culture pending, cont
+****
+Intubated/sedated, proning.
+****
+S: - patient remains intubated a"
+"Sample_text_and_pipeline_logic.txt","Pt proned","proned",,"Treated:Start","Pt",,,,"**** Pt proned at this time.","2476","2485","sition.
+****
+UTA anterior d/t pt proned.
+****
+Pt proned at this time.
+****
+Pt proned briefly.
+****
+pt laying prone no sob or dyspnea uti,culture pending, cont
+****
+Intubated/sedated, proning.
+****
+S: - patient remains intubated and prone
+****
+
+"
+"Sample_text_and_pipeline_logic.txt","Pt proned","proned",,"Treated:Start","Pt",,,,"**** Pt proned briefly.","2507","2516"," pt proned.
+****
+Pt proned at this time.
+****
+Pt proned briefly.
+****
+pt laying prone no sob or dyspnea uti,culture pending, cont
+****
+Intubated/sedated, proning.
+****
+S: - patient remains intubated and prone
+****
+
+*******************************"
+"Sample_text_and_pipeline_logic.txt","pt laying prone no ","prone",,"Treated:Start","pt laying",,,,"**** pt laying prone no sob or dyspnea uti,culture pending, cont **** Intubated/sedated, proning.","2533","2552","ed at this time.
+****
+Pt proned briefly.
+****
+pt laying prone no sob or dyspnea uti,culture pending, cont
+****
+Intubated/sedated, proning.
+****
+S: - patient remains intubated and prone
+****
+
+************************************ (No anchor)
+RESPIRATORY THERA"
+"Sample_text_and_pipeline_logic.txt","sedated, proning","prone",,"Treated:MechanicalVentilation","sedated,",,,,"**** pt laying prone no sob or dyspnea uti,culture pending, cont **** Intubated/sedated, proning.","2610","2626","yspnea uti,culture pending, cont
+****
+Intubated/sedated, proning.
+****
+S: - patient remains intubated and prone
+****
+
+************************************ (No anchor)
+RESPIRATORY THERAPIST'S COMMENT:
+Patient placed back on HFNC.
+
+*************************"
+"Sample_text_and_pipeline_logic.txt","intubated and prone","prone",,"Treated:MechanicalVentilation","intubated",,,,"**** S: - patient remains intubated and prone **** ************************************ (No","2656","2675","ted/sedated, proning.
+****
+S: - patient remains intubated and prone
+****
+
+************************************ (No anchor)
+RESPIRATORY THERAPIST'S COMMENT:
+Patient placed back on HFNC.
+
+************************************ (With anchor)
+RESPIRATORY THERAPIST'"
+"Sample_text_and_pipeline_logic.txt","on prone position","prone",,"Treated:Start","on",,,,"TORY THERAPIST'S COMMENT: Patient placed back on prone position.","2907","2924","IRATORY THERAPIST'S COMMENT:
+Patient placed back on prone position.
+
+
+
+
+************************************************************************
+************************************3.1 overlapped concepts are merged
+************************************
+
+
+*"
+"Sample_text_and_pipeline_logic.txt","in prone position","prone",,"Treated:Start","in",,,,"*********************************** **** in prone position.","3129","3146","
+************************************
+
+
+****
+in prone position.
+****
+placed in a prone position.
+****
+has been able to tolerate prone
+****
+has not been able to tolerate prone
+****
+tolerating prone position
+****
+not tolerating prone position
+****
+
+
+"
+"Sample_text_and_pipeline_logic.txt","placed in a prone position","prone",,"Treated:Start","placed in a",,,,"**** placed in a prone position.","3155","3181","************
+
+
+****
+in prone position.
+****
+placed in a prone position.
+****
+has been able to tolerate prone
+****
+has not been able to tolerate prone
+****
+tolerating prone position
+****
+not tolerating prone position
+****
+
+
+***********************************"
+"Sample_text_and_pipeline_logic.txt","tolerate prone","prone",,"Treated:Continuation","tolerate",,,,"**** has been able to tolerate prone **** has not been able to tolerate prone **** tolerating prone position **** not tolerating prone position **** **************************************","3207","3221","aced in a prone position.
+****
+has been able to tolerate prone
+****
+has not been able to tolerate prone
+****
+tolerating prone position
+****
+not tolerating prone position
+****
+
+
+************************************************************************
+*"
+"Sample_text_and_pipeline_logic.txt","not been able to tolerate prone","prone",,"NotTreated:NotTolerated","not been able to tolerate",,,,"**** has been able to tolerate prone **** has not been able to tolerate prone **** tolerating prone position **** not tolerating prone position **** **************************************","3233","3264","
+****
+has been able to tolerate prone
+****
+has not been able to tolerate prone
+****
+tolerating prone position
+****
+not tolerating prone position
+****
+
+
+************************************************************************
+********************************************"
+"Sample_text_and_pipeline_logic.txt","tolerating prone position","prone",,"Treated:Continuation","tolerating",,,,"**** has been able to tolerate prone **** has not been able to tolerate prone **** tolerating prone position **** not tolerating prone position **** **************************************","3272","3297","
+****
+has not been able to tolerate prone
+****
+tolerating prone position
+****
+not tolerating prone position
+****
+
+
+************************************************************************
+************************************************************************4. An"
+"Sample_text_and_pipeline_logic.txt","not tolerating prone position","prone",,"NotTreated:NotTolerated","not tolerating",,,,"**** has been able to tolerate prone **** has not been able to tolerate prone **** tolerating prone position **** not tolerating prone position **** **************************************","3305","3334","ate prone
+****
+tolerating prone position
+****
+not tolerating prone position
+****
+
+
+************************************************************************
+************************************************************************4. Annotate Dates and Temporality Terms
+*"
+"Sample_text_and_pipeline_logic.txt","s/p proning","prone",,"Treated:Stopped","s/p",,,,"**** 5/15 **** 07/19/2020 **** 5/21 - s/p proning intermitantly **** proning this afternoon **** proned yesterday **** Prone positioning at least 15hrs/day.","3689","3700","*
+
+
+****
+5/15
+****
+07/19/2020
+****
+5/21 - s/p proning intermitantly
+****
+proning this afternoon
+****
+proned yesterday
+****
+Prone positioning at least 15hrs/day.
+****
+Pt proned again on 2/4.
+****
+
+
+********************************************"
+"Sample_text_and_pipeline_logic.txt","proning this afternoon","prone",,"Treated:Date",,"this afternoon",,,"**** 5/15 **** 07/19/2020 **** 5/21 - s/p proning intermitantly **** proning this afternoon **** proned yesterday **** Prone positioning at least 15hrs/day.","3722","3744","20
+****
+5/21 - s/p proning intermitantly
+****
+proning this afternoon
+****
+proned yesterday
+****
+Prone positioning at least 15hrs/day.
+****
+Pt proned again on 2/4.
+****
+
+
+************************************************************************
+**************"
+"Sample_text_and_pipeline_logic.txt","proned yesterday","proned",,"Treated:Date",,"yesterday",,,"**** 5/15 **** 07/19/2020 **** 5/21 - s/p proning intermitantly **** proning this afternoon **** proned yesterday **** Prone positioning at least 15hrs/day.","3752","3768","ntermitantly
+****
+proning this afternoon
+****
+proned yesterday
+****
+Prone positioning at least 15hrs/day.
+****
+Pt proned again on 2/4.
+****
+
+
+************************************************************************
+**************************************"
+"Sample_text_and_pipeline_logic.txt","Prone positioning at least 15hrs/day","prone",,"Treated:Duration","at least 15hrs/day",,,,"**** 5/15 **** 07/19/2020 **** 5/21 - s/p proning intermitantly **** proning this afternoon **** proned yesterday **** Prone positioning at least 15hrs/day.","3776","3812","ing this afternoon
+****
+proned yesterday
+****
+Prone positioning at least 15hrs/day.
+****
+Pt proned again on 2/4.
+****
+
+
+************************************************************************
+************************************************************************5. Identif"
+"Sample_text_and_pipeline_logic.txt","Pt proned","proned",,"Treated:Start","Pt",,,,"**** Pt proned again on 2/4.","3821","3830","***
+Prone positioning at least 15hrs/day.
+****
+Pt proned again on 2/4.
+****
+
+
+************************************************************************
+************************************************************************5. Identify Date Patterns, a"
+"Sample_text_and_pipeline_logic.txt","s/p proning","prone",,"Treated:Stopped","s/p",,,,"******************** **** 5/15 - 5/21 - s/p proning intermitantly **** proning 9/3 to 9/6 **** ***************************","4219","4230","************************
+
+
+****
+5/15 - 5/21 - s/p proning intermitantly
+****
+proning 9/3 to 9/6
+****
+
+
+************************************************************************
+************************************************************************6."
+"Sample_text_and_pipeline_logic.txt","proning 9/3 to 9/6","prone",,"Treated:Date",,,"9/3","9/6","******************** **** 5/15 - 5/21 - s/p proning intermitantly **** proning 9/3 to 9/6 **** ***************************","4252","4270","*
+5/15 - 5/21 - s/p proning intermitantly
+****
+proning 9/3 to 9/6
+****
+
+
+************************************************************************
+************************************************************************6. Annotate Right Sided Modifier Terms
+So"
+"Sample_text_and_pipeline_logic.txt","Prone","prone",,,,,,,"****** ************************************Type: Prone_Modifier_Right ************************************ **** proning as able **** **** (to\\s*\\w+) is a super specific exclusion for the prone concept Prone to anxiety **** prone to bleeding **** **************************","4634","4639","******
+************************************Type: Prone_Modifier_Right
+************************************
+
+
+****
+proning as able
+****
+**** (to\\s*\\w+) is a super specific exclusion for the prone concept
+Prone to anxiety
+****
+prone to bleeding"
+"Sample_text_and_pipeline_logic.txt","proning as able","prone",,"Treated:Continuation","as able",,,,"****** ************************************Type: Prone_Modifier_Right ************************************ **** proning as able **** **** (to\\s*\\w+) is a super specific exclusion for the prone concept Prone to anxiety **** prone to bleeding **** **************************","4704","4719","
+************************************
+
+
+****
+proning as able
+****
+**** (to\\s*\\w+) is a super specific exclusion for the prone concept
+Prone to anxiety
+****
+prone to bleeding
+****
+
+
+********************************************************************"
+"Sample_text_and_pipeline_logic.txt","prone","prone",,,,,,,"****** ************************************Type: Prone_Modifier_Right ************************************ **** proning as able **** **** (to\\s*\\w+) is a super specific exclusion for the prone concept Prone to anxiety **** prone to bleeding **** **************************","4783","4788","to\\s*\\w+) is a super specific exclusion for the prone concept
+Prone to anxiety
+****
+prone to bleeding
+****
+
+
+************************************************************************
+***************************************************************"
+"Sample_text_and_pipeline_logic.txt","Prone to anxiety","prone",,"Exclude:Irrelevant","to anxiety",,,,"****** ************************************Type: Prone_Modifier_Right ************************************ **** proning as able **** **** (to\\s*\\w+) is a super specific exclusion for the prone concept Prone to anxiety **** prone to bleeding **** **************************","4798","4814","a super specific exclusion for the prone concept
+Prone to anxiety
+****
+prone to bleeding
+****
+
+
+************************************************************************
+************************************************************************7. Delete right s"
+"Sample_text_and_pipeline_logic.txt","prone to bleeding","prone",,"Exclude:Irrelevant","to bleeding",,,,"****** ************************************Type: Prone_Modifier_Right ************************************ **** proning as able **** **** (to\\s*\\w+) is a super specific exclusion for the prone concept Prone to anxiety **** prone to bleeding **** **************************","4822","4839","on for the prone concept
+Prone to anxiety
+****
+prone to bleeding
+****
+
+
+************************************************************************
+************************************************************************7. Delete right sided annotations
+*******"
+"Sample_text_and_pipeline_logic.txt","proned 5/15 to 5/21","proned",,"Treated:Date",,,"5/15","5/21","************************************ **** proned 5/15 to 5/21 **** ('to' as a regex would have ov","5211","5230","
+************************************
+
+
+****
+proned 5/15 to 5/21
+**** ('to' as a regex would have overlapped this and boundary cases on the regex would have missed some exclusions)
+tolerate awake proning
+****
+
+*************************************************"
+"Sample_text_and_pipeline_logic.txt","tolerate awake proning","self_prone",,"Treated:Continuation","tolerate",,,,"egex would have missed some exclusions) tolerate awake proning **** ****************************************","5349","5371"," on the regex would have missed some exclusions)
+tolerate awake proning
+****
+
+************************************************************************
+************************************************************************8.Create Prone Pattern
+This is most often s"
+"Sample_text_and_pipeline_logic.txt","Prone","prone",,,,,,,"*****************************************8.Create Prone Pattern This is most often simply [Modifier_term","5536","5541","*****************************************8.Create Prone Pattern
+This is most often simply [Modifier_term] + [Anchor], but does include the target/anchor logic for date ranges
+Similar to the examples with prone terms, overlapped patterns also merge
+****"
+"Sample_text_and_pipeline_logic.txt","prone","prone",,,,,,,"gic for date ranges Similar to the examples with prone terms, overlapped patterns also merge **********","5692","5697","gic for date ranges
+Similar to the examples with prone terms, overlapped patterns also merge
+************************************************************************
+************************************************************************
+
+
+****
+in"
+"Sample_text_and_pipeline_logic.txt","in prone position","prone",,"Treated:Start","in",,,,"*********************************** **** in prone position.","5895","5912","**************************************
+
+
+****
+in prone position.
+****
+placed in a prone position.
+****
+The patient was placed in prone position.
+****
+
+************************************
+*******************************************************************"
+"Sample_text_and_pipeline_logic.txt","placed in a prone position","prone",,"Treated:Start","placed in a",,,,"**** placed in a prone position.","5921","5947","************
+
+
+****
+in prone position.
+****
+placed in a prone position.
+****
+The patient was placed in prone position.
+****
+
+************************************
+************************************************************************
+****************************"
+"Sample_text_and_pipeline_logic.txt","patient was placed in prone position","prone",,"Treated:Start","patient was placed in",,,,"**** The patient was placed in prone position.","5960","5996","on.
+****
+placed in a prone position.
+****
+The patient was placed in prone position.
+****
+
+************************************
+************************************************************************
+************************************************************************9. Lo"
+"Sample_text_and_pipeline_logic.txt","complete prone","prone",,"Treated:Start","complete",,,,"Logic Annotator This step takes complete prone patterns and sets all of the features that are o","6227","6241","**************9. Logic Annotator
+This step takes complete prone patterns and sets
+all of the features that are output. (See the pattern features)
+Primarily just takes a modifier, and sets the concept to
+the prone [Phrase_modifier].
+
+Includes some additional "
+"Sample_text_and_pipeline_logic.txt","prone","prone",,,,,,,"st takes a modifier, and sets the concept to the prone [Phrase_modifier].","6388","6393","st takes a modifier, and sets the concept to
+the prone [Phrase_modifier].
+
+Includes some additional logic for the extracted dates, and mechanical ventilation
+terms that were annotated separately.
+******************************************************"
+"Sample_text_and_pipeline_logic.txt","s/p proning","prone",,"Treated:Stopped","s/p",,,,"ifier term ************************ **** s/p proning **** ************************9.3 Set Phrase","7141","7152"," modifier term
+************************
+
+****
+s/p proning
+****
+
+
+************************9.3 Set Phrase_Modifier: if overlapped by mechanical vent terms (functions exactly the same as modifiers, but keeping separate for future vent updates etc. )
+****S"
+"Sample_text_and_pipeline_logic.txt","intubated and prone","prone",,"Treated:MechanicalVentilation","intubated",,,,"***** **** S: - patient remains intubated and prone **** ************************9.4 Set Phrase","7535","7554","*******************
+
+****
+S: - patient remains intubated and prone
+****
+
+
+************************9.4 Set Phrase_Modifier: Using the concept of an overlapped right sided modifier
+
+****
+Prone to anxiety
+****
+prone to bleeding
+****
+
+
+*********************"
+"Sample_text_and_pipeline_logic.txt","Prone to anxiety","prone",,"Exclude:Irrelevant","to anxiety",,,,"pt of an overlapped right sided modifier **** Prone to anxiety **** prone to bleeding **** ************************9.","7680","7696","pt of an overlapped right sided modifier
+
+****
+Prone to anxiety
+****
+prone to bleeding
+****
+
+
+************************9.5 Set Extrtacted Date: If a date exists (and wasn't overlapped by the date pattern)
+**** This logic is questionable/not necessary for th"
+"Sample_text_and_pipeline_logic.txt","prone to bleeding","prone",,"Exclude:Irrelevant","to bleeding",,,,"pt of an overlapped right sided modifier **** Prone to anxiety **** prone to bleeding **** ************************9.","7704","7721","t sided modifier
+
+****
+Prone to anxiety
+****
+prone to bleeding
+****
+
+
+************************9.5 Set Extrtacted Date: If a date exists (and wasn't overlapped by the date pattern)
+**** This logic is questionable/not necessary for the current tool, may updat"
+"Sample_text_and_pipeline_logic.txt","proned on 5/21","proned",,"Treated:Start","on",,"5/21",,"ay update soon ************************ **** proned on 5/21 **** ************************9.6 Se","7963","7977","ay update soon
+************************
+
+****
+proned on 5/21
+****
+
+
+************************9.6 Set Extrtacted Date: If a date pattern exists
+
+****
+ S/p intermittent proning 9/3 to 9/6
+****
+**** some common templates within the VA, are more hardcoded"
+"Sample_text_and_pipeline_logic.txt","S/p intermittent proning 9/3 to 9/6","prone",,"Treated:Stopped","S/p intermittent",,"9/3",,"a date pattern exists **** S/p intermittent proning 9/3 to 9/6 **** **** some common templates with","8073","8108","trtacted Date: If a date pattern exists
+
+****
+ S/p intermittent proning 9/3 to 9/6
+****
+**** some common templates within the VA, are more hardcoded
+****
+Patient Positioning Body Positioning (9/06 8:00 AM )-- Prone
+
+
+************************9.7 Set the anchor term and term_t"
+"Sample_text_and_pipeline_logic.txt","Body Positioning (9/06 8:00 AM )-- Prone","prone",,"Treated:Date",,"8:00 AM","9/06",,"nt Positioning Body Positioning (9/06 8:00 AM )-- Prone ************************9.7 Set the anchor term and term_type features **** pt is prone **** proned today **** proning this afternoon **** ***********************","8204","8244","VA, are more hardcoded
+****
+Patient Positioning Body Positioning (9/06 8:00 AM )-- Prone
+
+
+************************9.7 Set the anchor term and term_type features
+
+****
+pt is prone
+****
+proned today
+****
+proning this afternoon
+****
+
+
+************************9.8 Set the outpu"
+"Sample_text_and_pipeline_logic.txt","pt is prone","prone",,"Treated:Start","pt is",,,,"nt Positioning Body Positioning (9/06 8:00 AM )-- Prone ************************9.7 Set the anchor term and term_type features **** pt is prone **** proned today **** proning this afternoon **** ***********************","8330","8341","t the anchor term and term_type features
+
+****
+pt is prone
+****
+proned today
+****
+proning this afternoon
+****
+
+
+************************9.8 Set the output overlapped sentence
+
+****
+RESPIRATORY THERAPIST'S COMMENT:
+****
+Patient placed back in pro"
+"Sample_text_and_pipeline_logic.txt","proned today","proned",,"Treated:Start","today","today",,,"nt Positioning Body Positioning (9/06 8:00 AM )-- Prone ************************9.7 Set the anchor term and term_type features **** pt is prone **** proned today **** proning this afternoon **** ***********************","8349","8361","nd term_type features
+
+****
+pt is prone
+****
+proned today
+****
+proning this afternoon
+****
+
+
+************************9.8 Set the output overlapped sentence
+
+****
+RESPIRATORY THERAPIST'S COMMENT:
+****
+Patient placed back in prone position.
+****
+"
+"Sample_text_and_pipeline_logic.txt","proning this afternoon","prone",,"Treated:Date",,"this afternoon",,,"nt Positioning Body Positioning (9/06 8:00 AM )-- Prone ************************9.7 Set the anchor term and term_type features **** pt is prone **** proned today **** proning this afternoon **** ***********************","8369","8391","s
+
+****
+pt is prone
+****
+proned today
+****
+proning this afternoon
+****
+
+
+************************9.8 Set the output overlapped sentence
+
+****
+RESPIRATORY THERAPIST'S COMMENT:
+****
+Patient placed back in prone position.
+****
+Patient without decreased PO i"
+"Sample_text_and_pipeline_logic.txt","back in prone position","prone",,"Treated:Restarted","back in",,,,"HERAPIST'S COMMENT: **** Patient placed back in prone position.","8530","8552","RATORY THERAPIST'S COMMENT:
+****
+Patient placed back in prone position.
+****
+Patient without decreased PO intake.
+****
+
+
+************************************************************************
+*********************************************************************"

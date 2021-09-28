@@ -1,0 +1,63 @@
+##### ###### ##### ###### ##### ###### ##### ###### ##### ###### ##### ######
+##### ###### ##### ###### Concept Pattern Annotator
+##### ###### ##### ###### The Current system outputs all anchor terms for analysis, regardless of classification.
+##### ###### ##### ###### ##### ###### ##### ###### ##### ###### ##### ######
+<gov.va.vinci.vent.types.Prone_Term/>
+##### ###### ##### ######
+##### ###### ##### ###### ##### ###### ##### ###### ## Simple Standard Patterns with Modifiers
+##### ###### ##### ######
+<gov.va.vinci.vent.types.Prone_Modifier/>\s*<gov.va.vinci.vent.types.Prone_Term/>
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Modifier/>
+##continue intermittent proning
+<gov.va.vinci.vent.types.Prone_Modifier/>\s*<gov.va.vinci.vent.types.Prone_Middle/>\s*<gov.va.vinci.vent.types.Prone_Term/>
+##intubation with/and proning/pronation
+<gov.va.vinci.vent.types.Vent_Term/>\s*<gov.va.vinci.vent.types.Prone_Middle/>\s*<gov.va.vinci.vent.types.Prone_Term/>
+##proned and ventilated
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Middle/>\s*<gov.va.vinci.vent.types.Vent_Term/>
+##(prone) intubated/ventilated
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Vent_Term/>
+##### ###### ##### ######
+##### ###### ##### ###### ##### ###### ##### ###### ##Temporality
+##### ###### ##### ######
+##Proned yesterday
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Temporality/>
+##Proned on monday
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Modifier/>\s*<gov.va.vinci.vent.types.Temporality/>
+##16 hours proned
+<gov.va.vinci.vent.types.Temporality/>\s*<gov.va.vinci.vent.types.Prone_Term/>
+##Proned patient 4-5
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Middle/>\s*<gov.va.vinci.vent.types.Temporality/>
+##unprone at 1500
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Middle/>\s*<gov.va.vinci.vent.types.Temporality/>
+##unprone from 9/3-9/6
+##<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Middle/>\s*<gov.va.vinci.vent.types.Date_Pattern/>
+##proned 9/3-9/6
+##<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Date_Pattern/>
+##### ###### ##### ######
+##### ###### ##### ###### ##### ###### ##### ###### ##Terms with Date or Date Range
+##### ###### ##### ######
+## proned on 04/23
+<gov.va.vinci.vent.types.Prone_Term/>\s*<!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Modifier/>\s*<!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>
+## succesfully proned - Date
+<gov.va.vinci.vent.types.Prone_Modifier/>\s*<gov.va.vinci.vent.types.Prone_Term/>\s*<!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>
+<gov.va.vinci.vent.types.Prone_Term/>\s*<!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>\s*<gov.va.vinci.vent.types.Vent_Date_Middle/>\s*<!target><gov.va.vinci.vent.types.Vent_Date/><!target/>
+## Pattern with Date or Date range
+## proned per protocol 04/23
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Middle/>\s*<!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>
+<gov.va.vinci.vent.types.Prone_Middle/>\s*<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Middle/>\s*<!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>
+##Terminally Extubated ON
+<gov.va.vinci.vent.types.Prone_Modifier/>\s*<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Middle/>\s*<!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>
+## Ventilated per protocol 04/23 - 04-26
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Middle/><!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>\s*<gov.va.vinci.vent.types.Vent_Date_Middle/>\s*<!target><gov.va.vinci.vent.types.Vent_Date/><!target/>
+##### ###### ##### ######
+##### ###### ##### ###### ##### ###### ##### ###### ##Right Sided modifiers
+##### ###### ##### ######
+<gov.va.vinci.vent.types.Prone_Term/>\s*<gov.va.vinci.vent.types.Prone_Modifier_Right/>
+##### ###### ##### ######
+##### ###### ##### ######
+##### ###### ##### ###### ##### ###### ##### ###### ## VA specific templated notes - frequently occurring log of patients body position
+##### ###### ##### ###### ##### ###### ##### ###### ## e.g. (1/31 8:00 AM )-- (ROTO PRONE BED)
+##### ###### ##### ######
+Body\s*Positioning\s*\(<!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>\s*<gov.va.vinci.vent.types.Temporality/>\s*\)\s*--\s*\(?<gov.va.vinci.vent.types.Prone_Term/>
+\(<!anchor><gov.va.vinci.vent.types.Vent_Date/><!anchor/>\s*<gov.va.vinci.vent.types.Temporality/>\s*\)\s*--\s*\(?<gov.va.vinci.vent.types.Prone_Term/>

@@ -1,0 +1,28 @@
+0    [main] INFO  class gov.va.vinci.ProneService  -  
+ 
+ ===  Starting Service 20210611.165817 ====
+  
+1295 [main] INFO  gov.va.vinci.leo.tools.LeoProperties  - AggregateDescriptor: /var/folders/xd/l9ptg45n5_qcsvk411gdfkph0000gp/T/leoAggregate2373846469875562606.xml
+1295 [main] INFO  gov.va.vinci.leo.tools.LeoProperties  - /var/folders/xd/l9ptg45n5_qcsvk411gdfkph0000gp/T/leoDeployment2886898816033630406.xml
+1316 [main] WARN  gov.va.vinci.leo.tools.LeoProperties  - JAM Server Base URL is null, NOT trying to register with JAM.
+1317 [main] INFO  gov.va.vinci.leo.tools.LeoProperties  - UimaAsynchronousEngine.DD2SpringXsltFilePath=/Users/u0559480/workspace/UIMA/apache-uima-as-2.9.0//bin/dd2spring.xsl
+1317 [main] INFO  gov.va.vinci.leo.tools.LeoProperties  - UimaAsynchronousEngine.SaxonClasspath=file:/Users/u0559480/workspace/UIMA/apache-uima-as-2.9.0//saxon/saxon8.jar
+2122 [main] INFO  org.springframework.context.support.FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@56aaaecd: startup date [Fri Jun 11 16:58:19 EDT 2021]; root of context hierarchy
+2171 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/var/folders/xd/l9ptg45n5_qcsvk411gdfkph0000gp/T/UIMAdd2springOutput7473712359356876986.xml]
+2681 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor  - Initializing ExecutorService  'pooling_Prone_Phenotype_1'
+2767 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor  - Initializing ExecutorService  'pooling_Prone_Phenotype_1'
+3915 [main] INFO  gov.va.vinci.leo.tools.LeoProperties  - 'Deployed' the AS service and containers
+0    [main] INFO  class gov.va.vinci.ProneService  -  
+ 
+ ===  Starting Service 20210612.173525 ====
+  
+1382 [main] INFO  gov.va.vinci.leo.tools.LeoProperties  - AggregateDescriptor: /var/folders/xd/l9ptg45n5_qcsvk411gdfkph0000gp/T/leoAggregate3301487618067760116.xml
+1383 [main] INFO  gov.va.vinci.leo.tools.LeoProperties  - /var/folders/xd/l9ptg45n5_qcsvk411gdfkph0000gp/T/leoDeployment6663603259669825603.xml
+1400 [main] WARN  gov.va.vinci.leo.tools.LeoProperties  - JAM Server Base URL is null, NOT trying to register with JAM.
+1402 [main] INFO  gov.va.vinci.leo.tools.LeoProperties  - UimaAsynchronousEngine.DD2SpringXsltFilePath=/Users/u0559480/workspace/UIMA/apache-uima-as-2.9.0//bin/dd2spring.xsl
+1402 [main] INFO  gov.va.vinci.leo.tools.LeoProperties  - UimaAsynchronousEngine.SaxonClasspath=file:/Users/u0559480/workspace/UIMA/apache-uima-as-2.9.0//saxon/saxon8.jar
+2238 [main] INFO  org.springframework.context.support.FileSystemXmlApplicationContext  - Refreshing org.springframework.context.support.FileSystemXmlApplicationContext@56aaaecd: startup date [Sat Jun 12 17:35:28 EDT 2021]; root of context hierarchy
+2279 [main] INFO  org.springframework.beans.factory.xml.XmlBeanDefinitionReader  - Loading XML bean definitions from URL [file:/var/folders/xd/l9ptg45n5_qcsvk411gdfkph0000gp/T/UIMAdd2springOutput4875028377598056292.xml]
+2816 [main] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor  - Initializing ExecutorService  'pooling_Prone_Phenotype_1'
+2901 [Thread-2] INFO  org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor  - Initializing ExecutorService  'pooling_Prone_Phenotype_1'
+3864 [main] INFO  gov.va.vinci.leo.tools.LeoProperties  - 'Deployed' the AS service and containers
