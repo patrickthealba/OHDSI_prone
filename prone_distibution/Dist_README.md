@@ -2,7 +2,9 @@
 
 ## Environment Requirements for the prone system Jar.
 - UIMA-AS:  This system requires uima 2.9
-- Jdk 8: Currently using and tested on Amazon Correto open JDK: https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/macos-install.html
+		https://archive.apache.org/dist/uima/uima-as-2.9.0/
+- Jdk 8: Currently using and tested on Amazon Correto open JDK:
+	https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/macos-install.html
 
 
 ## Install Java
@@ -27,12 +29,12 @@ For help setting a the environment variable, see these examples for Windows, Mac
 
 
 ## Steps to run the system:
-### The following steps run the initial file to xmi example 
+### The following steps run the initial file to xmi example
 
 1. Start a UIMA-AS Broker.
 	apache-uima-as-2.9.0/bin/startBroker.sh
 2. Confirm that config\ServiceConfig.groovy points to the correct instance of running broker (brokerUrl)
-3. Configure desired reader and listener configuration file 
+3. Configure desired reader and listener configuration file
 	(default is set to read in the example file and output an xmi)
 4. Confirm that runClient.bat or .\runClient.sh points at desired reader and listener configuration file
 5. Run Service
@@ -52,4 +54,3 @@ For help setting a the environment variable, see these examples for Windows, Mac
     Note: Scaling up for larger datasets requires starting multiple Clients. However, unlike with Service (just simply running it again), starting a new Client requires modification of the reader configuration file to ensure that the reader is accessing a different subset of records. Restarting a client without re-configuring a reader will lead to a simple duplication of processing.
 
 ### the .bat and .sh scripts need to be updated to point to the relevant readers and listeners when processing to/from a database. If the amount of documents to process is prohibitive, documents can first be pre-filtered to process only those containing one of the following terms. ['prone', 'proning', 'proneing', 'rotaprone', 'rotoprone', 'rotabed', 'rotobed']
-
