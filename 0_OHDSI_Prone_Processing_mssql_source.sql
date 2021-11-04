@@ -50,7 +50,8 @@ Steps:
 	--All notes found 0-30 days from the start_date
 
 	Select 
-		note_id
+		person_id
+		,note_id
 		,note_text
 		,note_date
 		,note_title 
