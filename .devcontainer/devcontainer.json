@@ -1,0 +1,39 @@
+{
+	"name": "prone_docker",
+	"image": "jdposa/starr_omop_docker",
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "conda install -y --file requirements.txt",
+	// "mounts": [
+	// 	"source=${localEnv:HOME}/.config/gcloud,target=/home/jovyan/.config/gcloud,type=bind,consistency=cached"
+	// ],
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "root",
+	
+	// "name": "n3c_docker",
+	// "image": "gcr.io/som-rit-phi-starr-odyssey-dev/n3c_exporter_docker",
+
+	// Below is an attempt to use this in a remote container asking vscode to start the container instead of doing it separately
+	// "image": "gcr.io/som-rit-phi-starr-odyssey-dev/n3c_exporter_docker", 
+	// "workspaceFolder": "/workspace",
+	// "workspaceMount": "source=/home/jdposada, target=/workspace,type=bind,consistency=cached",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+
+	"containerEnv": { "GRANT_SUDO": "yes" },
+	
+	"containerUser": "root",
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": ["ms-python.python", 
+				   "ms-python.anaconda-extension-pack", 
+				   "redhat.vscode-yaml", 
+				   "ms-python.vscode-pylance", 
+				   "visualstudioexptteam.vscodeintellicode", 
+				   "sbg-rabix.benten-cwl", 
+				   "ms-vscode-remote.remote-ssh"],
+
+
+}
