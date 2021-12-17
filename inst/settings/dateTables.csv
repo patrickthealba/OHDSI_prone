@@ -1,0 +1,10 @@
+cdmTable,dateColumn
+condition_occurrence,condition_start_date
+device_exposure,device_exposure_start_date
+drug_exposure,drug_exposure_start_date
+visit_detail,drug_exposure_start_date
+visit_occurrence,visit_start_date
+measurement,measurement_date
+note,note_date
+observation,observation_date
+procedure_occurrence,procedure_date
