@@ -24,20 +24,16 @@ import gov.va.vinci.listeners.BasicCsvListener;
 
 fieldList = [
         ["DocID", "-1", "bigint"],
-       /* ["Pattern", "-1", "varchar(210)"],
-        ["Snippets", "-1", "varchar(1000)"],
-        ["Concept", "-1", "varchar(50)"]
-        */
-        //["TIUDocumentSID", "0", "bigint"],
         ["Term", "-1", "varchar(150)"],
         ["Term_Type", "-1", "varchar(5000)"],
-       // ["Section", "-1", "varchar(500)"],
+        ["Prone_Status", "-1", "varchar(500)"],
         ["Term_Modifier", "-1", "varchar(500)"],
         ["Phrase_Modifier", "-1", "varchar(500)"],
         ["Modifier_Term", "-1", "varchar(500)"],
         ["Temporality_Modifier", "-1", "varchar(500)"],
         ["Date_1", "-1", "varchar(500)"],
         ["Date_2", "-1", "varchar(500)"],
+        ["Temporality", "-1", "varchar(500)"],
         ["Anchored_Sentence", "-1", "varchar(5000)"],
         ["SpanStart", "-1", "int"],
         ["SpanEnd", "-1", "int"],
