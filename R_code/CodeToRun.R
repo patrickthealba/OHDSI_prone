@@ -20,6 +20,7 @@ target_cohort_id <- "141"
 notes_folder ="/workdir/workdir/ProneNotes/"
 nlp_admission_summary <- "nlp_admission_summary"
 nlp_raw_output <- "nlp_raw_output"
+nlp_output_filename <- "nlp_output_leo.csv"
 
 renv_final_path <- paste(r_env_cache_folder,
                          renv_vesion,
@@ -85,7 +86,7 @@ subsetCDM(cohortId=target_cohort_id,
 # Download the clinical notes from the subset
 
 renderedSql <- SqlRender::render("SELECT * FROM @resultDatabaseSchema.note",
-                                 resultDatabaseSchema=resultDatabaseSchema,
+                                 resultDatabaseSchema=target_database_schema,
                                  warnOnMissingParameters = TRUE)
 
 translatedSql <- SqlRender::translate(sql=renderedSql,
@@ -104,9 +105,23 @@ write_notes <- function(x, notes_folder) {
 
 
 # Run NLP algorithm manually
+# The name of the file should be the same as the one declared on nlp_output_filename
 
-# Upload the file to Database
-# The name of the table should be chose from the variable nlp_raw_output
+# Upload the file to Database. it is assumed that the file lives within the same folder the notes are
+
+nlp_output_leo = read.csv(paste0(notes_folder, nlp_output_filename))
+
+DatabaseConnector::insertTable(connection = connection,
+                               databaseSchema = target_database_schema,
+                               tableName=nlp_raw_output,
+                               data=nlp_output_leo,
+                               dropTableIfExists = TRUE,
+                               createTable = TRUE,
+                               tempTable = FALSE,
+                               oracleTempSchema = NULL,
+                               progressBar = TRUE,
+                               camelCaseToSnakeCase = FALSE
+                              )
 
 # Rollup Logic
 # The resulting table should have the following schema
