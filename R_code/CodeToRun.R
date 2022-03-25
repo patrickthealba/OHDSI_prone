@@ -18,6 +18,8 @@ target_database_schema <- "`allennlp.jposada_explore`"
 target_cohort_table <- "cohort"
 target_cohort_id <- "141"
 notes_folder ="/workdir/workdir/ProneNotes/"
+nlp_admission_summary <- "nlp_admission_summary"
+nlp_raw_output <- "nlp_raw_output"
 
 renv_final_path <- paste(r_env_cache_folder,
                          renv_vesion,
@@ -96,8 +98,44 @@ write_notes <- function(x, notes_folder) {
   note_id <- x['NOTE_ID']
   person_id <- x['PERSON_ID']
   note_text <- x['NOTE_TEXT']
-  fileName <- paste0(folder, note_id, ".txt")
+  fileName <- paste0(notes_folder, person_id, "_", note_id, ".txt")
   cat(note_text, file=fileName , append = F, fill = F)
 }
+
+
+# Run NLP algorithm manually
+
+# Upload the file to Database
+# The name of the table should be chose from the variable nlp_raw_output
+
+# Rollup Logic
+# The resulting table should have the following schema
+# person_id: INT
+# treated: [1, 0] 
+# intent: [1, 0]
+# notTreated: [1, 0]
+# treated_count: INT
+# notTreated_count: INT
+# intent_count: INT
+# proneTreatment: [treated, intent, notTreated, noDocumentation]
+
+renderedSql <- SqlRender::render(SqlRender::readSql("inst/sql/sql_server/nlp_rollup_logic.sql"),
+                                 result_schema=target_database_schema,
+                                 nlp_admission_summary=nlp_admission_summary,
+                                 target_cohort=target_cohort_table,
+                                 nlp_raw_output=nlp_raw_output,
+                                 warnOnMissingParameters = TRUE)
+
+translatedSql <- SqlRender::translate(sql=renderedSql,
+                                      targetDialect = connectionDetails$dbms,
+                                      tempEmulationSchema = target_database_schema)
+
+DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
+                              sql=translatedSql)
+
+# Compute the incidence
+
+
+
 
 
