@@ -14,39 +14,6 @@ Requires:
 
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
--- Restrict output to relevant patients and dates, normalize modifier types
--- This step is only required if all notes were processed rather than a restricted cohort
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-/*
--- Initial step here to normalize the raw output
-	--restricts to only those notes that  fell within 30 days of the start/indextdate if the input notes were note already pre-filtered by dates
-
-
-		drop table if exists #nlp_output_30day;
-		Select 	distinct 
-			coh.person_id
-			, coh.start_date
-			, note.note_id
-			, note.note_date
-			, nlp.Prone_Status
-			, nlp.Spanstart
-			, nlp.SpanEnd
-		into #nlp_output_30day
-			 from 
-					@result_schema.@nlp_raw_output  nlp 
-				join 	
-					@cdm_database_schema.note note
-					on nlp.note_id=note.note_id
-				join  result_schema
-					 @result_schema.@target_cohort coh  
-					  on note.person_id=coh.person_id
-				where 
-						 datediff(day, coh.start_date, note.note_date) <=30 
-						 and datediff(day,  coh.start_date, note.note_date) >=0 
-*/
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Aggregate and combine output to a patient/admission-level
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -54,9 +21,9 @@ Requires:
 		drop table if exists @result_schema.@nlp_admission_summary;
 		 with all_covid_admissions as (
 			select 
-				person_id
-				,start_date
-				,end_date
+				subject_id as person_id
+				,cohort_start_date
+				,cohort_end_date
 			from 
 			@result_schema.@target_cohort
 
@@ -87,7 +54,7 @@ Requires:
 					on coh.person_id=nlp.person_id
 			) 
       
-      Select 
+      				Select 
 				rolled_up_summary.*
 				--Single label per admission
 				, case when Treated >=1 then 'Treated'
@@ -99,26 +66,3 @@ Requires:
 			from 
 				rolled_up_summary
         
-       
-
-----------------------------------------------------------------------------------------------------------------------------------------------------------
--- Some Analytic/summary review queries 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-/* ***** ***** Total Count of admissions and patients ***** ***** */
-/*
-		Select count(*), count(distinct person_id) from 
-		@result_schema.@nlp_admission_summary
-*/
-
-
-/* ***** ***** Total Count Treated ***** ***** */
-/*
-		Select 
-		ProneTreatment
-		, count(distinct person_id)
-		from 
-				@result_schema.@nlp_admission_summary
-		group by ProneTreatment
-    */
