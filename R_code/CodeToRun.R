@@ -54,8 +54,8 @@ translatedSql <- SqlRender::translate(sql=renderedSql,
                                       targetDialect = connectionDetails$dbms,
                                       tempEmulationSchema = target_database_schema)
 
-# DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
-#                             sql=translatedSql)
+DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
+                              sql=translatedSql)
 
 # Run the Charybdis Cohort
 renderedSql <- SqlRender::render(SqlRender::readSql("inst/sql/sql_server/ID139_V1.sql"),
@@ -70,8 +70,8 @@ translatedSql <- SqlRender::translate(sql=renderedSql,
                                       targetDialect = connectionDetails$dbms,
                                       tempEmulationSchema = target_database_schema)
 
-# DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
-#                             sql=translatedSql)
+DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
+                              sql=translatedSql)
 
 
 # Subset the CDM
