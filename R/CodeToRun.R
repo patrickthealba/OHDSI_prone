@@ -18,6 +18,9 @@ target_database_schema <- "`allennlp.jposada_explore`"
 target_cohort_table <- "cohort"
 target_cohort_id <- "141"
 notes_folder ="/workdir/workdir/ProneNotes/"
+nlp_admission_summary <- "nlp_admission_summary"
+nlp_raw_output <- "nlp_raw_output"
+nlp_output_filename <- "nlp_output_leo.csv"
 
 renv_final_path <- paste(r_env_cache_folder,
                          renv_vesion,
@@ -51,8 +54,8 @@ translatedSql <- SqlRender::translate(sql=renderedSql,
                                       targetDialect = connectionDetails$dbms,
                                       tempEmulationSchema = target_database_schema)
 
-# DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
-#                             sql=translatedSql)
+DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
+                              sql=translatedSql)
 
 # Run the Charybdis Cohort
 renderedSql <- SqlRender::render(SqlRender::readSql("inst/sql/sql_server/ID139_V1.sql"),
@@ -67,8 +70,8 @@ translatedSql <- SqlRender::translate(sql=renderedSql,
                                       targetDialect = connectionDetails$dbms,
                                       tempEmulationSchema = target_database_schema)
 
-# DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
-#                             sql=translatedSql)
+DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
+                              sql=translatedSql)
 
 
 # Subset the CDM
@@ -83,7 +86,7 @@ subsetCDM(cohortId=target_cohort_id,
 # Download the clinical notes from the subset
 
 renderedSql <- SqlRender::render("SELECT * FROM @resultDatabaseSchema.note",
-                                 resultDatabaseSchema=resultDatabaseSchema,
+                                 resultDatabaseSchema=target_database_schema,
                                  warnOnMissingParameters = TRUE)
 
 translatedSql <- SqlRender::translate(sql=renderedSql,
@@ -96,8 +99,58 @@ write_notes <- function(x, notes_folder) {
   note_id <- x['NOTE_ID']
   person_id <- x['PERSON_ID']
   note_text <- x['NOTE_TEXT']
-  fileName <- paste0(folder, note_id, ".txt")
+  fileName <- paste0(notes_folder, person_id, "_", note_id, ".txt")
   cat(note_text, file=fileName , append = F, fill = F)
 }
+
+
+# Run NLP algorithm manually
+# The name of the file should be the same as the one declared on nlp_output_filename
+
+# Upload the file to Database. it is assumed that the file lives within the same folder the notes are
+
+nlp_output_leo = read.csv(paste0(notes_folder, nlp_output_filename))
+
+DatabaseConnector::insertTable(connection = connection,
+                               databaseSchema = target_database_schema,
+                               tableName=nlp_raw_output,
+                               data=nlp_output_leo,
+                               dropTableIfExists = TRUE,
+                               createTable = TRUE,
+                               tempTable = FALSE,
+                               oracleTempSchema = NULL,
+                               progressBar = TRUE,
+                               camelCaseToSnakeCase = FALSE
+                              )
+
+# Rollup Logic
+# The resulting table should have the following schema
+# person_id: INT
+# treated: [1, 0] 
+# intent: [1, 0]
+# notTreated: [1, 0]
+# treated_count: INT
+# notTreated_count: INT
+# intent_count: INT
+# proneTreatment: [treated, intent, notTreated, noDocumentation]
+
+renderedSql <- SqlRender::render(SqlRender::readSql("inst/sql/sql_server/nlp_rollup_logic.sql"),
+                                 result_schema=target_database_schema,
+                                 nlp_admission_summary=nlp_admission_summary,
+                                 target_cohort=target_cohort_table,
+                                 nlp_raw_output=nlp_raw_output,
+                                 warnOnMissingParameters = TRUE)
+
+translatedSql <- SqlRender::translate(sql=renderedSql,
+                                      targetDialect = connectionDetails$dbms,
+                                      tempEmulationSchema = target_database_schema)
+
+DatabaseConnector::executeSql(connection=DatabaseConnector::connect(connectionDetails),
+                              sql=translatedSql)
+
+# Compute the incidence
+
+
+
 
 

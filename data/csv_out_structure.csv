@@ -1,0 +1,3 @@
+"DocID","Term","Term_Type","Prone_Status","Term_Modifier","Phrase_Modifier","Modifier_Term","Temporality_Modifier","Date_1","Date_2","Anchored_Sentence","SpanStart","SpanEnd","Snippets"
+"123456_150459438.txt","prone pt for 16 hours","prone","Treated",,"Treated:Start","pt","for 16 hours",,,"test","274","295","test"
+"123456_150459438.txt","prone pt","prone","Treated",,"Treated:Start","pt",,,,"test","831","839","test"
