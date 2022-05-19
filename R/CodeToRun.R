@@ -95,6 +95,7 @@ translatedSql <- SqlRender::translate(sql=renderedSql,
 
 all_prone_notes = DatabaseConnector::querySql(connection = connection, sql = SQL)
 
+# Write the notes in individual files
 write_notes <- function(x, notes_folder) {
   note_id <- x['NOTE_ID']
   person_id <- x['PERSON_ID']
@@ -103,6 +104,7 @@ write_notes <- function(x, notes_folder) {
   cat(note_text, file=fileName , append = F, fill = F)
 }
 
+ apply(all_prone_notes, 1, write_notes, notes_folder=notes_folder)
 
 # Run NLP algorithm manually
 # The name of the file should be the same as the one declared on nlp_output_filename
